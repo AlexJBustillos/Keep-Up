@@ -4,10 +4,7 @@ body {
 }
 
 .container {
-    
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+    text-align: center;
     border: 3px whitesmoke;
 }
 
@@ -22,10 +19,11 @@ body {
     height: 600px;
     width: 600px;
     text-align: center;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     margin: auto;
     justify-content: space-around;
+    
     
 }
 
@@ -37,8 +35,10 @@ body {
     font-size: 16px;
     cursor: pointer;
     align-self: center;
-    visibility: visible;
     
+    width: 10%;
+    height: 5%;
+    display: block;
 
 }
 .start:hover {
@@ -53,7 +53,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     align-self: center;
-    visibility: hidden;
+    display: none;
 }
 
 .reset:hover {
@@ -65,6 +65,7 @@ body {
     height: 225px;
     width: 225px;
     transform: rotateZ(45deg);
+    
 }
 
 #teal {
@@ -77,6 +78,7 @@ body {
     0 0 50px #fff,
     -10px 0 80px #0ff,
     10px 0 80px #0ff;
+    
 }
 #pink {
     background-color: rgb(108, 10, 53) ;
@@ -110,4 +112,12 @@ body {
     0 0 50px #fff,
     -10px 0 80px rgb(188, 88, 66),
     10px 0 80px rgb(188, 88, 66);
+}
+
+.rules {
+    display: block;
+    text-align: center;
+    font-family: 'VT323', monospace;
+    color: rgb(201, 202, 7);
+    font-size: 75px;
 }
