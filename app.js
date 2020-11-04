@@ -18,29 +18,32 @@ let purple = document.getElementById('purple');
 let orange = document.getElementById('orange');
 
 let instructions = document.querySelector('.rules');
-
-// const getRandomChoice = () => {
-    
-//     const computerChoice = [
-//         teal,
-//         pink,
-//         purple,
-//         orange    
-//     ];
-//     return computerChoice[parseInt(Math.random() * computerChoice.length)];
-// };
-// const sequence = [getRandomChoice()];
-// let sequenceToGuess = [...sequence];
-
 //creat a variable with empty array
 let colorArray = [];
+let computerArray = [];
+
+const getRandomChoice = () => {
+    const choices = [
+        teal,
+        pink,
+        purple,
+        orange    
+    ];
+    const computerChoice = choices[parseInt(Math.random() * choices.length)];
+    computerChoice.classList.add('glow-' + computerChoice.id);
+    setTimeout(() => {
+        computerChoice.classList.remove('glow-' + computerChoice.id)
+    }, 1000);
+    const count = computerArray.push(computerChoice);
+    // return computerChoice;
+    
 
 
+};
 
 
-
-
-
+//compare random choices with player choices should be compared after a turn
+const sequence = [getRandomChoice()];
 
 //add event listener
 grabStart.addEventListener('click', () => {
@@ -48,47 +51,41 @@ grabStart.addEventListener('click', () => {
     grabReset.style.display = 'block';
     grabBoard.style.display = 'flex';
     instructions.style.display = 'none';
-    
+    getRandomChoice();
+    console.log(computerArray);
 });
-    
-
 addElementToArray = () => {
     teal.addEventListener('click', () => {
-        teal.classList.add('glowTeal');
+        teal.classList.add('glow-teal');
         setTimeout(() => {
-            teal.classList.remove('glowTeal');
+            teal.classList.remove('glow-teal');
         }, 500);
         const count = colorArray.push('teal');
     }); 
     pink.addEventListener('click', () => {
-        pink.classList.add('glowPink');
+        pink.classList.add('glow-pink');
         setTimeout(() => {
-            pink.classList.remove('glowPink');
+            pink.classList.remove('glow-pink');
         }, 500);
         const count = colorArray.push('pink');
     });    
     purple.addEventListener('click', () => {
-        purple.classList.add('glowPurple');
+        purple.classList.add('glow-purple');
         setTimeout(() => {
-            purple.classList.remove('glowPurple');
+            purple.classList.remove('glow-purple');
         }, 500);
         const count = colorArray.push('purple');
     });    
     orange.addEventListener('click', () => {
-        orange.classList.add('glowOrange');
+        orange.classList.add('glow-orange');
         setTimeout(() => {
-            orange.classList.remove('glowOrange');
+            orange.classList.remove('glow-orange');
         }, 500)
-         const count = colorArray.push('orange');
+        const count = colorArray.push('orange');
     });    
-
+    
 };
 addElementToArray();
-
-
-
-
-
 
 grabReset.addEventListener('click', () => {
     // console.log(grabReset);
@@ -103,6 +100,48 @@ resetBoard = () => {
     
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let colorArray = [...sequence];
+
+
+
+// if (computerChoice[i] === teal.classList.add('glowTeal')) {
+//     setTimeout(() => {
+//         teal.classList.toggle('glowTeal');
+//     }, 1000);
+// } else if (computerChoice[i] === pink.classList.add('glowPink')) {
+//     setTimeout(() => {
+//         pink.classList.toggle('glowPink');
+//     }, 1000);
+// } else if (computerChoice[i] === purple.classList.add('glowPurple')) {
+//     setTimeout(() => {
+//         purple.classList.toggle('glowPurple');
+//     }, 1000);
+// } else if (computerChoice[i] === orange.classList.add('glowOrange')) {
+//     setTimeout(() => {
+//         orange.classList.toggle('glowOrange');
+//     }, 1000);
+// }
 
 
 //next button stored as a variable
