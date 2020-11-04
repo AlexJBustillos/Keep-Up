@@ -22,7 +22,7 @@ let instructions = document.querySelector('.rules');
 let colorArray = [];
 let computerArray = [];
 
-const getRandomChoice = () => {
+getRandomChoice = () => {
     const choices = [
         teal,
         pink,
@@ -34,7 +34,7 @@ const getRandomChoice = () => {
     setTimeout(() => {
         computerChoice.classList.remove('glow-' + computerChoice.id)
     }, 1000);
-    const count = computerArray.push(computerChoice);
+    computerArray.push(computerChoice);
     // return computerChoice;
     
 
@@ -44,6 +44,13 @@ const getRandomChoice = () => {
 
 //compare random choices with player choices should be compared after a turn
 const sequence = [getRandomChoice()];
+compareBoth = () => {
+    if (colorArray === computerArray) {
+        getRandomChoice();
+    } else if (colorArray !== computerArray) {
+        console.log('idk whats wrong');
+    }
+};
 
 //add event listener
 grabStart.addEventListener('click', () => {
@@ -52,7 +59,8 @@ grabStart.addEventListener('click', () => {
     grabBoard.style.display = 'flex';
     instructions.style.display = 'none';
     getRandomChoice();
-    console.log(computerArray);
+    addElementToArray();
+    
 });
 addElementToArray = () => {
     teal.addEventListener('click', () => {
@@ -60,32 +68,32 @@ addElementToArray = () => {
         setTimeout(() => {
             teal.classList.remove('glow-teal');
         }, 500);
-        const count = colorArray.push('teal');
+        colorArray.push('teal');
     }); 
     pink.addEventListener('click', () => {
         pink.classList.add('glow-pink');
         setTimeout(() => {
             pink.classList.remove('glow-pink');
         }, 500);
-        const count = colorArray.push('pink');
+        colorArray.push('pink');
     });    
     purple.addEventListener('click', () => {
         purple.classList.add('glow-purple');
         setTimeout(() => {
             purple.classList.remove('glow-purple');
         }, 500);
-        const count = colorArray.push('purple');
+        colorArray.push('purple');
     });    
     orange.addEventListener('click', () => {
         orange.classList.add('glow-orange');
         setTimeout(() => {
             orange.classList.remove('glow-orange');
         }, 500)
-        const count = colorArray.push('orange');
+        colorArray.push('orange');
     });    
-    
+   compareBoth(); 
 };
-addElementToArray();
+
 
 grabReset.addEventListener('click', () => {
     // console.log(grabReset);
