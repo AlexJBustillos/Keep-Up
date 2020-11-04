@@ -31,6 +31,8 @@ let instructions = document.querySelector('.rules');
 // };
 // const sequence = [getRandomChoice()];
 // let sequenceToGuess = [...sequence];
+
+//creat a variable with empty array
 let colorArray = [];
 
 
@@ -89,21 +91,26 @@ addElementToArray();
 
 
 grabReset.addEventListener('click', () => {
-    console.log(grabReset);
+    // console.log(grabReset);
     resetBoard();
 });
 resetBoard = () => {
-    let colorArray = []
+    let colorArray = [];
+    grabStart.style.display = 'block';
+    grabReset.style.display = 'none';
+    grabBoard.style.display = 'none';
+    instructions.style.display = 'block';
+    
 };
 
 
 
 //next button stored as a variable
 //variable of what is expecting set to string of id color and it should match on the logic
-//first log each box was clicked and compare that to the one expecting and light up the one as the prompt
-//first try sequence of clicks on my side 
 
-//creat a variable with empty array
+
+
+
 //if there is a time reset time and reset colors or anything that needs to be turned off. including emptying array
 // let canClick = false;
 // const boxClicked = boxClicked => {
