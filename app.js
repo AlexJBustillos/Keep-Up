@@ -7,17 +7,17 @@ const grabStart = document.querySelector('.start');
 
 const grabReset = document.querySelector('.reset');
 
-let allBlocks = document.querySelectorAll('.block');
+const allBlocks = document.querySelectorAll('.block');
 
-let teal = document.getElementById('teal');
+const teal = document.getElementById('teal');
 
-let pink = document.getElementById('pink');
+const pink = document.getElementById('pink');
 
-let purple = document.getElementById('purple');
+const purple = document.getElementById('purple');
 
-let orange = document.getElementById('orange');
+const orange = document.getElementById('orange');
 
-let instructions = document.querySelector('.rules');
+const instructions = document.querySelector('.rules');
 
 const clickTeal = teal.addEventListener('click', () => {
     teal.classList.add('glow-teal');
@@ -197,23 +197,6 @@ resetBoard = () => {
 
 
 
-// if (computerChoice[i] === teal.classList.add('glowTeal')) {
-//     setTimeout(() => {
-//         teal.classList.toggle('glowTeal');
-//     }, 1000);
-// } else if (computerChoice[i] === pink.classList.add('glowPink')) {
-//     setTimeout(() => {
-//         pink.classList.toggle('glowPink');
-//     }, 1000);
-// } else if (computerChoice[i] === purple.classList.add('glowPurple')) {
-//     setTimeout(() => {
-//         purple.classList.toggle('glowPurple');
-//     }, 1000);
-// } else if (computerChoice[i] === orange.classList.add('glowOrange')) {
-//     setTimeout(() => {
-//         orange.classList.toggle('glowOrange');
-//     }, 1000);
-// }
 
 
 //next button stored as a variable
@@ -222,26 +205,4 @@ resetBoard = () => {
 
 
 
-//if there is a time reset time and reset colors or anything that needs to be turned off. including emptying array
-// let canClick = false;
-// const boxClicked = boxClicked => {
-//     if (!canClick) return;
-//     const expectedChoice = sequenceToGuess.shift();
-//     if (expectedChoice === boxClicked) {
-//         if (sequenceToGuess.length === 0) {
-//             sequence.push(getRandomChoice());
-//             sequenceToGuess = [...sequence];
-//             startLights();
-//         }
-//     } else {
-//         return alert('game over');
-//     }
-// };     
-// const startLights = async () => {
-//     canClick = false;
-//     for (const elements of sequence) {
-//         await getRandomChoice();
-//     }
-//     canClick = true;
-// };
-// startLights();      
+   
