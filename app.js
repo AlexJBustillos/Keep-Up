@@ -18,39 +18,124 @@ let purple = document.getElementById('purple');
 let orange = document.getElementById('orange');
 
 let instructions = document.querySelector('.rules');
+
+const clickTeal = teal.addEventListener('click', () => {
+    teal.classList.add('glow-teal');
+    setTimeout(() => {
+        teal.classList.remove('glow-teal');
+    }, 500);
+    playerChoice('teal')
+}); 
+
+const clickPink = pink.addEventListener('click', () => {
+    pink.classList.add('glow-pink');
+    setTimeout(() => {
+        pink.classList.remove('glow-pink');
+    }, 500);
+    playerChoice('pink')
+});    
+
+const clickPurple = purple.addEventListener('click', () => {
+    purple.classList.add('glow-purple');
+    setTimeout(() => {
+        purple.classList.remove('glow-purple');
+    }, 500);
+    playerChoice('purple')
+});   
+
+const clickOrange = orange.addEventListener('click', () => {
+    orange.classList.add('glow-orange');
+    setTimeout(() => {
+        orange.classList.remove('glow-orange');
+    }, 500)
+    playerChoice('orange')
+});     
 //creat a variable with empty array
-let colorArray = [];
+let playerArray = [];
 let computerArray = [];
+let order = 1;
 
 getRandomChoice = () => {
-    const choices = [
-        teal,
-        pink,
-        purple,
-        orange    
-    ];
-    const computerChoice = choices[parseInt(Math.random() * choices.length)];
-    computerChoice.classList.add('glow-' + computerChoice.id);
+    if (order > 1) {
+        for (i = 0; i < computerArray.length; i++) {
+            const block = computerArray[i];
+            debugger
+            setTimeout(() => {
+                debugger
+                block.color.classList.add('glow-' + block.color.id);
+            }, (i * 1000) + 1000);
+    
+            
+            setTimeout(() => {
+                block.color.classList.remove('glow-' + block.color.id)
+            }, 1000);
+        };
+
+    };
     setTimeout(() => {
-        computerChoice.classList.remove('glow-' + computerChoice.id)
-    }, 1000);
-    computerArray.push(computerChoice);
+        const choices = [
+            teal,
+            pink,
+            purple,
+            orange    
+        ];
+        const computerChoice = choices[parseInt(Math.random() * choices.length)];
+        computerChoice.classList.add('glow-' + computerChoice.id);
+        setTimeout(() => {
+            computerChoice.classList.remove('glow-' + computerChoice.id)
+        }, 1000);
+        computerArray.push({
+            id: order,
+            color: computerChoice
+        });
+
+    }, 1000)
+    
     // return computerChoice;
+};
+
+playerChoice = (color) => {
+    const obj = {
+        id: order,
+        color
+    }
+    playerArray.push(obj);
+    order ++;
+    getRandomChoice();
+    console.log(playerArray);
+};
     
 
 
-};
 
 
 //compare random choices with player choices should be compared after a turn
-const sequence = [getRandomChoice()];
+// const sequence = [getRandomChoice()];
 compareBoth = () => {
-    if (colorArray === computerArray) {
-        getRandomChoice();
-    } else if (colorArray !== computerArray) {
-        console.log('idk whats wrong');
-    }
-};
+     
+        for (i = 0; playerArray.length; i++) {
+            const element = playerArray[i];
+            for (j = 0; computerArray.length; j++) {
+                const element2 = computerArray[j];
+                if (element.color === element2.color) {
+                    if(element.id === element2.id) {
+                        getRandomChoice();
+                    } else {
+                        console.log('game Over');
+                    return;
+                    }
+                } else { 
+                    console.log('game Over');
+                    return;
+                } 
+            }
+        }
+    };
+
+
+                
+        
+    
 
 //add event listener
 grabStart.addEventListener('click', () => {
@@ -63,34 +148,13 @@ grabStart.addEventListener('click', () => {
     
 });
 addElementToArray = () => {
-    teal.addEventListener('click', () => {
-        teal.classList.add('glow-teal');
-        setTimeout(() => {
-            teal.classList.remove('glow-teal');
-        }, 500);
-        colorArray.push('teal');
-    }); 
-    pink.addEventListener('click', () => {
-        pink.classList.add('glow-pink');
-        setTimeout(() => {
-            pink.classList.remove('glow-pink');
-        }, 500);
-        colorArray.push('pink');
-    });    
-    purple.addEventListener('click', () => {
-        purple.classList.add('glow-purple');
-        setTimeout(() => {
-            purple.classList.remove('glow-purple');
-        }, 500);
-        colorArray.push('purple');
-    });    
-    orange.addEventListener('click', () => {
-        orange.classList.add('glow-orange');
-        setTimeout(() => {
-            orange.classList.remove('glow-orange');
-        }, 500)
-        colorArray.push('orange');
-    });    
+    clickTeal;
+    clickPink;
+    clickPurple;
+    clickOrange;
+    
+     
+    
    compareBoth(); 
 };
 
@@ -100,7 +164,7 @@ grabReset.addEventListener('click', () => {
     resetBoard();
 });
 resetBoard = () => {
-    let colorArray = [];
+    let playerArray = [];
     grabStart.style.display = 'block';
     grabReset.style.display = 'none';
     grabBoard.style.display = 'none';
@@ -129,7 +193,7 @@ resetBoard = () => {
 
 
 
-// let colorArray = [...sequence];
+// let playerArray = [...sequence];
 
 
 
