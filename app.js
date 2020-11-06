@@ -140,7 +140,7 @@ play = () => {
     turn = 1;
     turnCounter.textContent = 1;
     good = true;
-    for (i = 0; i < 20; i++) {
+    for (i = 0; i < 15; i++) {
         computerArray.push(Math.floor(Math.random() * 4) + 1);
     }
     compTurn = true;
@@ -206,12 +206,13 @@ check = () => {
     if (good === false) {
         flashColor();
         turnCounter.textContent = 'YOU LOSE! START AGAIN LOSER!!';
-        
+        on = false;
+        win = true;
         setTimeout(() => {
-            turnCounter.textContent = turn;
+            // turnCounter.textContent = turn;
             clearColor();
-            play()
-        }, 800);
+            // play()
+        }, 1000);
     };
     if (turn === playerArray.length && good && !win) {
         turn++;

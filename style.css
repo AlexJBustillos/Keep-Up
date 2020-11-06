@@ -6,6 +6,9 @@ body {
 .container {
     text-align: center;
     border: 3px whitesmoke;
+    background-image: url(https://artfiles.alphacoders.com/121/thumb-1920-121146.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .title {
@@ -23,6 +26,7 @@ body {
     flex-wrap: wrap;
     margin: auto;
     justify-content: space-around;
+    
     
     
 }
@@ -69,6 +73,12 @@ body {
     color: rgb(245, 245, 10);
     font-size: 75px;
 }
+.rules span {
+    background-color: rgb(248, 126, 179);
+    opacity: 70%;
+}   
+    
+    
 
 .glow-teal {
     box-shadow: inset 0 0 50px #fff, inset 20px 0 80px #0ff, inset 20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #0ff, 10px 0 80px #0ff; 
