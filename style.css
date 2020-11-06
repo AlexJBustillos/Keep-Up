@@ -27,7 +27,7 @@ body {
     
 }
 
-.start {
+.game {
     border-radius: 32px;
     background-color: rgb(201, 202, 7);
     color: whitesmoke;
@@ -41,9 +41,10 @@ body {
     display: block;
 
 }
-.start:hover {
+.game:hover {
     background-color: rgb(110, 10, 53) ;
 }
+
 
 .reset {
     border-radius: 32px;
@@ -54,6 +55,50 @@ body {
     cursor: pointer;
     align-self: center;
     display: none;
+}
+
+#start {
+    border-radius: 32px;
+    background-color: rgb(201, 202, 7);
+    color: whitesmoke;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: center;
+    display: none;
+    width: 10%;
+    height: 5%;
+}
+
+#start:hover {
+    background-color: rgb(110, 10, 53) ;
+}
+
+#on {
+    border-radius: 32px;
+    background-color: rgb(201, 202, 7);
+    color: whitesmoke;
+    /* border: ; */
+    font-size: 16px;
+    cursor: pointer;
+    align-self: center;
+    display: none;
+    width: 20px;
+    height: 10px;
+}
+#label {
+    font-size: medium;
+    color: whitesmoke;
+    visibility: hidden;
+}
+
+#turn {
+    background-color: whitesmoke ; 
+    color: palevioletred;
+    font-size: 16px;
+    width: 10%;
+    height: 10%;
+    /* display: hidden; */
 }
 
 .reset:hover {
