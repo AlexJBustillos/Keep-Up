@@ -200,12 +200,12 @@ flashColor = () => {
 check = () => {
     if (playerArray[playerArray.length - 1] !== computerArray[playerArray.length - 1]) 
     good = false;
-    if (playerArray.length === 5 && good) {
+    if (playerArray.length === 15 && good) {
         winGame();
     }
     if (good === false) {
         flashColor();
-        turnCounter.textContent = 'YOU LOSE! START AGAIN LOSER!!';
+        turnCounter.textContent = 'YOU LOSE AND NOW YOURE A BOSS, TOO...OF THIS PILE OF RUBBLE';
         on = false;
         win = true;
         setTimeout(() => {
