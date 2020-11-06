@@ -13,7 +13,7 @@ let win;
 const grabContainer = document.querySelector('.container');
 const grabBoard = document.querySelector('.board');
 const grabGame = document.querySelector('.game');
-const grabReset = document.querySelector('.reset');
+const grabInstructions = document.querySelector('.instructions');
 const teal = document.getElementById('teal');
 const pink = document.getElementById('pink');
 const purple = document.getElementById('purple');
@@ -32,7 +32,7 @@ startButton.addEventListener('click', () => {
 })
 
 onButton.addEventListener('click', () => {
-    if (onButton.checked == true) {
+    if (onButton.checked === true) {
         flashColor();
         setTimeout(() => {
             clearColor()
@@ -107,9 +107,9 @@ orange.addEventListener('click', () => {
  
 });     
 
-grabReset.addEventListener('click', () => {
+grabInstructions.addEventListener('click', () => {
     grabGame.style.display = 'block';
-    grabReset.style.display = 'none';
+    grabInstructions.style.display = 'none';
     grabBoard.style.display = 'none';
     instructions.style.display = 'block';
     onButton.style.display = 'none';
@@ -119,7 +119,7 @@ grabReset.addEventListener('click', () => {
 });
 grabGame.addEventListener('click', (event) => {
     grabGame.style.display = 'none';
-    grabReset.style.display = 'block';
+    grabInstructions.style.display = 'block';
     grabBoard.style.display = 'flex';
     instructions.style.display = 'none';
     onButton.style.display = 'inline-block';
@@ -148,6 +148,27 @@ play = () => {
     intervalId = setInterval(gameTurn, 800)
 };
 
+gameTurn = () => {
+    on = false;
+
+    if (flash === turn) {
+        clearInterval(intervalId);
+        compTurn = false;
+        clearColor();
+        on = true;
+    }
+    if (compTurn) {
+        clearColor();
+        setTimeout(() => {
+           if (computerArray[flash] == 1) one(); 
+           if (computerArray[flash] == 2) two(); 
+           if (computerArray[flash] == 3) three(); 
+           if (computerArray[flash] == 4) four();
+           flash++; 
+        }, 200);
+
+    }
+}
 
 one = () => {
     teal.classList.add('glow-teal');
@@ -174,8 +195,42 @@ flashColor = () => {
     orange.classList.add('glow-orange');
 }
 
-//next button stored as a variable
-//variable of what is expecting set to string of id color and it should match on the logic
+
+
+check = () => {
+    if (playerArray[playerArray.length - 1] !== computerArray[playerArray.length - 1]) 
+    good = false;
+    if (playerArray.length === 5 && good) {
+        winGame();
+    }
+    if (good === false) {
+        flashColor();
+        turnCounter.textContent = 'YOU LOSE! START AGAIN LOSER!!';
+        
+        setTimeout(() => {
+            turnCounter.textContent = turn;
+            clearColor();
+            play()
+        }, 800);
+    };
+    if (turn === playerArray.length && good && !win) {
+        turn++;
+        playerArray = [];
+        compTurn = true;
+        flash = 0;
+        turnCounter.textContent = turn;
+        intervalId = setInterval(gameTurn, 800)
+    }
+}
+
+winGame = () => {
+    flashColor();
+    turnCounter.textContent = 'WIN!'
+    on = false;
+    win = true;
+};
+
+
 
 
 

@@ -11,10 +11,13 @@
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     </head>
     <body>
+        <audio src="/music/good_enough.mp3" autoplay>
+            
+            </audio>
         
         <div class="container">
             <h1 class="title">KEEP UP</h1>
-            <p class="rules">Keep Up if you can...Press start and test your memory against the computer. The computer will start by giving a series of colors and you will follow the exact order. As the levels progress the speed and length of each turn will as well. Good luck!!</p>
+            <p class="rules">Keep Up if you can...Test your memory against the computer. The computer will start by giving a series of colors and you will follow the exact order. Do you have the mental strength to make it 15 rounds?!?! Good luck!!</p>
             
             <div class="board">
                 <div class="block" id="teal"></div>
@@ -23,14 +26,14 @@
                 <div class="block" id="orange"></div>
                 
             </div>
-
+            
+            <div id="turn"></div>
             
             <button class="game">Game</button>
-            <button class="reset">Reset</button>
+            <button class="instructions">Instructions</button>
             <input type="checkbox" class="toggle" id="on">
-            <label id="label" for="on">Turn Game On</label>
+            <label id="label" for="on">Game On</label>
             <button id="start">Start Game</button>
-            <div id="turn"></div>
             
         </div>
         

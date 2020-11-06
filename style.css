@@ -10,9 +10,9 @@ body {
 
 .title {
     font-family: 'VT323', monospace;
-    color: rgb(201, 202, 7);
+    color: rgb(245, 245, 10);
     text-align: center;
-    font-size: 75px;
+    font-size: 100px;
 }
 
 .board {
@@ -29,80 +29,29 @@ body {
 
 .game {
     border-radius: 32px;
-    background-color: rgb(201, 202, 7);
-    color: whitesmoke;
+    background-color: rgb(245, 245, 10);
+    color: black;
     border: none;
-    font-size: 16px;
+    font-size: 32px;
     cursor: pointer;
     align-self: center;
-    
+    font-family: 'VT323', monospace;
     width: 10%;
     height: 5%;
     display: block;
 
 }
-.game:hover {
-    background-color: rgb(110, 10, 53) ;
-}
 
-
-.reset {
+.instructions {
     border-radius: 32px;
-    background-color: rgb(201, 202, 7);
-    color: whitesmoke;
+    background-color: rgb(245, 245, 10);
+    color: black;
     border: none;
-    font-size: 16px;
+    font-size: 25px;
     cursor: pointer;
     align-self: center;
     display: none;
-}
-
-#start {
-    border-radius: 32px;
-    background-color: rgb(201, 202, 7);
-    color: whitesmoke;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    align-self: center;
-    display: none;
-    width: 10%;
-    height: 5%;
-}
-
-#start:hover {
-    background-color: rgb(110, 10, 53) ;
-}
-
-#on {
-    border-radius: 32px;
-    background-color: rgb(201, 202, 7);
-    color: whitesmoke;
-    /* border: ; */
-    font-size: 16px;
-    cursor: pointer;
-    align-self: center;
-    display: none;
-    width: 20px;
-    height: 10px;
-}
-#label {
-    font-size: medium;
-    color: whitesmoke;
-    visibility: hidden;
-}
-
-#turn {
-    background-color: whitesmoke ; 
-    color: palevioletred;
-    font-size: 16px;
-    width: 10%;
-    height: 10%;
-    /* display: hidden; */
-}
-
-.reset:hover {
-    background-color: rgb(110, 10, 53) ;
+    font-family: 'VT323', monospace;
 }
 
 .block {
@@ -113,22 +62,18 @@ body {
     
 }
 
-#teal {
-    background-color: rgb(61, 199, 196);
-    
+.rules {
+    display: block;
+    text-align: center;
+    font-family: 'VT323', monospace;
+    color: rgb(245, 245, 10);
+    font-size: 75px;
 }
+
 .glow-teal {
     box-shadow: inset 0 0 50px #fff, inset 20px 0 80px #0ff, inset 20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #0ff, 10px 0 80px #0ff; 
 }
 
-    
-    
-    
-    
-#pink {
-    background-color: rgb(108, 10, 53) ;
-    
-}
 .glow-pink {
     box-shadow: inset 0 0 50px #fff,
     inset 20px 0 80px #f0f,
@@ -137,12 +82,7 @@ body {
     -10px 0 80px #f0f,
     10px 0 80px #f0f;
 }
-    
-    
-#purple {
-    background-color: rgb(184, 124, 232);
-    
-}
+
 .glow-purple {
     box-shadow: inset 0 0 50px #fff,
     inset 20px 0 80px rgb(184, 124, 232),
@@ -153,10 +93,7 @@ body {
     -10px 0 80px rgb(184, 124, 232),
     10px 0 80px rgb(184, 124, 232);
 }
-#orange {
-    background-color: rgb(188, 88, 66);
-    
-}
+
 .glow-orange {
     box-shadow: inset 0 0 50px #fff,
     inset 20px 0 80px rgb(188, 88, 66),
@@ -168,10 +105,101 @@ body {
     10px 0 80px rgb(188, 88, 66);
 }
 
-.rules {
-    display: block;
-    text-align: center;
-    font-family: 'VT323', monospace;
-    color: rgb(201, 202, 7);
-    font-size: 75px;
+.game:hover {
+    background-color: rgb(201, 21, 99) ;
 }
+
+.instructions:hover {
+    background-color: rgb(201, 21, 99) ;
+}
+
+#start {
+    border-radius: 32px;
+    background-color: rgb(245, 245, 10);
+    color: black;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    align-self: center;
+    display: none;
+    width: 8%;
+    height: 5%;
+    font-family: 'VT323', monospace;
+}
+
+#start:hover {
+    background-color: rgb(201, 21, 99) ;
+}
+
+#on {
+    border-radius: 32px;
+    background-color: rgb(245, 245, 10);
+    color: whitesmoke;
+    
+    font-size: 16px;
+    cursor: pointer;
+    align-self: center;
+    display: none;
+    width: 20px;
+    height: 10px;
+}
+
+#on:hover {
+    background-color: rgb(201, 21, 99) ;
+}
+
+#label {
+    /* font-size: medium; */
+    color: black;
+    visibility: hidden;
+    border-radius: 32px;
+    background-color: rgb(245, 245, 10);
+    border: none;
+    font-size: 25px;
+    font-family: 'VT323', monospace;
+    cursor: pointer;
+    padding: 2px 2px 2px 2px;
+    margin-right: 4px;
+}
+
+#turn {
+    background-color: whitesmoke ; 
+    color: palevioletred;
+    font-size: 25px;
+    width: 10%;
+    height: 10%;
+    display: inline-block;
+    font-family: 'VT323', monospace;
+}
+
+#teal {
+    background-color: rgb(61, 199, 196);
+    
+}
+
+#pink {
+    background-color: rgb(201, 21, 99) ;
+    
+}
+
+#purple {
+    background-color: rgb(184, 124, 232);
+    
+}
+
+#orange {
+    background-color: rgb(188, 88, 66);
+    
+}
+
+
+
+
+    
+    
+    
+    
+
+    
+    
+
