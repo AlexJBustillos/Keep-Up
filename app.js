@@ -171,15 +171,24 @@ gameTurn = () => {
 }
 
 one = () => {
+    let audio = document.getElementById('forTeal');
+    audio.play();
     teal.classList.add('glow-teal');
+
 }
 two = () => {
+    let audio = document.getElementById('forPink');
+    audio.play();
     pink.classList.add('glow-pink');
 }
 three = () => {
+    let audio = document.getElementById('forPurple');
+    audio.play();
     purple.classList.add('glow-purple');
 }
 four = () => {
+    let audio = document.getElementById('forOrange');
+    audio.play();
     orange.classList.add('glow-orange');
 }
 clearColor = () => {
