@@ -115,7 +115,7 @@ grabInstructions.addEventListener('click', () => {
     onButton.style.display = 'none';
     startButton.style.display = 'none';
     document.getElementById('label').style.visibility = 'hidden';
-    
+    document.getElementById('turn').style.visibility = 'hidden';
 });
 grabGame.addEventListener('click', (event) => {
     grabGame.style.display = 'none';
@@ -125,7 +125,7 @@ grabGame.addEventListener('click', (event) => {
     onButton.style.display = 'inline-block';
     startButton.style.display = 'inline-block';
     document.getElementById('label').style.visibility = 'visible';
-   
+    document.getElementById('turn').style.visibility = 'visible';
     // getRandomChoice();
     // addElementToArray();
     
@@ -214,6 +214,8 @@ check = () => {
     }
     if (good === false) {
         flashColor();
+        let audio = document.getElementById('forLoss');
+        audio.play();
         turnCounter.textContent = 'YOU LOSE AND NOW YOURE A BOSS, TOO...OF THIS PILE OF RUBBLE';
         on = false;
         win = true;
@@ -238,6 +240,8 @@ winGame = () => {
     turnCounter.textContent = 'WIN!'
     on = false;
     win = true;
+    let audio = document.getElementById('forWin');
+    audio.play();
 };
 
 

@@ -1,4 +1,5 @@
 body {
+    
     background: rgb( 10, 17, 34);
     
 }
@@ -132,7 +133,7 @@ body {
     cursor: pointer;
     align-self: center;
     display: none;
-    width: 8%;
+    width: 10%;
     height: 5%;
     font-family: 'VT323', monospace;
 }
@@ -171,6 +172,9 @@ body {
     padding: 2px 2px 2px 2px;
     margin-right: 4px;
 }
+#label:hover {
+    background-color: rgb(201, 21, 99) ;
+}
 
 #turn {
     background-color: whitesmoke ; 
@@ -184,22 +188,25 @@ body {
 
 #teal {
     background-color: rgb(61, 199, 196);
+    cursor: pointer;
     
 }
 
 #pink {
     background-color: rgb(201, 21, 99) ;
+    cursor: pointer;
     
 }
 
 #purple {
     background-color: rgb(184, 124, 232);
+    cursor: pointer;
     
 }
 
 #orange {
     background-color: rgb(188, 88, 66);
-    
+    cursor: pointer;
 }
 
 
