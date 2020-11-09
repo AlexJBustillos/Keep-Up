@@ -4,7 +4,18 @@
 
 My initial idea for this game was a retro 80's look of the **Simon game**. I drew inspiration for the styling from the movie **Drive**. Always loved the color and design of it and tried to reflect as much as possible in the design of the page. Another source of inspiration was the cult classic anime film **Akira**. I used an image of the film I found as the background for the game board.
 
-## Instructions
+## Installation
+
+None is required. The game is hosted on this website:
+```
+alexjbustillos.github.io
+```
+If you would like to contribute to the game you can also 'fork' and 'clone' the repo in your terminal using this link:
+```
+git clone https://github.com/AlexJBustillos/Keep-Up.git
+```
+
+## Development
 
 This is a **player vs AI** game mode for the moment. It starts with the instructions on the page of how to play the game and on the bottom right of the screen is the game button which takes you to the game board.
 ![Image of Instructions](KEEPUPInst.png)
