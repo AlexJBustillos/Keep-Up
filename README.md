@@ -7,10 +7,9 @@ My initial idea for this game was a retro 80's look of the **Simon game**. I dre
 ## Installation
 
 None is required. The game is hosted on this website:
-```
-alexjbustillos.github.io
-```
-If you would like to contribute to the game you can also 'fork' and 'clone' the repo in your terminal using this link:
+[KEEP UP!](alexjbustillos.github.io)
+
+If you would like to contribute to the game you can also **fork** and **clone** the repo in your terminal using this link:
 ```
 git clone https://github.com/AlexJBustillos/Keep-Up.git
 ```
