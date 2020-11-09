@@ -47,11 +47,7 @@ onButton.addEventListener('click', () => {
     };
 });
 
-        
-    
-        
 teal.addEventListener('click', () => {
-    
     if (on) {
         playerArray.push(1);
         check();
@@ -62,9 +58,8 @@ teal.addEventListener('click', () => {
             }, 300);
         }
     }
-    
 }); 
-
+        
 pink.addEventListener('click', () => {
     if (on) {
         playerArray.push(2);
@@ -76,9 +71,8 @@ pink.addEventListener('click', () => {
             }, 300);
         }
     }
-    
 });    
-
+    
 purple.addEventListener('click', () => {
     if (on) {
         playerArray.push(3);
@@ -90,9 +84,8 @@ purple.addEventListener('click', () => {
             }, 300);
         }
     }
- 
 });   
-
+        
 orange.addEventListener('click', () => {
     if (on) {
         playerArray.push(4);
@@ -104,9 +97,8 @@ orange.addEventListener('click', () => {
             }, 300);
         }
     }
- 
 });     
-
+    
 grabInstructions.addEventListener('click', () => {
     grabGame.style.display = 'block';
     grabInstructions.style.display = 'none';
@@ -126,10 +118,8 @@ grabGame.addEventListener('click', (event) => {
     startButton.style.display = 'inline-block';
     document.getElementById('label').style.visibility = 'visible';
     document.getElementById('turn').style.visibility = 'visible';
-    // getRandomChoice();
-    // addElementToArray();
-    
 });
+    
 // functions
 play = () => {
     win = false;
@@ -150,7 +140,6 @@ play = () => {
 
 gameTurn = () => {
     on = false;
-
     if (flash === turn) {
         clearInterval(intervalId);
         compTurn = false;
@@ -168,7 +157,7 @@ gameTurn = () => {
         }, 200);
 
     }
-}
+};
 
 one = () => {
     let audio = document.getElementById('forTeal');
@@ -204,8 +193,6 @@ flashColor = () => {
     orange.classList.add('glow-orange');
 }
 
-
-
 check = () => {
     if (playerArray[playerArray.length - 1] !== computerArray[playerArray.length - 1]) 
     good = false;
@@ -220,9 +207,7 @@ check = () => {
         on = false;
         win = true;
         setTimeout(() => {
-            // turnCounter.textContent = turn;
             clearColor();
-            // play()
         }, 1000);
     };
     if (turn === playerArray.length && good && !win) {
@@ -233,7 +218,7 @@ check = () => {
         turnCounter.textContent = turn;
         intervalId = setInterval(gameTurn, 800)
     }
-}
+};
 
 winGame = () => {
     flashColor();
@@ -243,6 +228,20 @@ winGame = () => {
     let audio = document.getElementById('forWin');
     audio.play();
 };
+            
+
+
+    
+
+ 
+
+ 
+
+    
+    
+
+
+
 
 
 

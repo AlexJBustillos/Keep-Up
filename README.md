@@ -25,7 +25,7 @@ git clone https://github.com/AlexJBustillos/Keep-Up.git
 
 ## Development
 
-This is a **player vs AI** game mode for the moment. It starts with the instructions on the page of how to play the game and on the bottom right of the screen is the game button which takes you to the game board.
+This is a **player vs AI** game mode for the moment. It starts with the instructions on the page of how to play the game and on the bottom left of the screen is the game button which takes you to the game board.
 ![Image of Instructions](KEEPUPinst.png)
 
 This is the gameboard.
@@ -54,6 +54,8 @@ This made it easier to do the styling for the game and add the glow effect for e
 }
 ```
 I used the transform propery for each block in order to get the effect I wanted on the board.
+
+## Logic
 
 ```Javascript
 clearColor = () => {
