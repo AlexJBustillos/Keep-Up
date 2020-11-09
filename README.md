@@ -17,7 +17,7 @@ git clone https://github.com/AlexJBustillos/Keep-Up.git
 ## Development
 
 This is a **player vs AI** game mode for the moment. It starts with the instructions on the page of how to play the game and on the bottom right of the screen is the game button which takes you to the game board.
-![Image of Instructions](KEEPUPInst.png)
+![Image of Instructions](KEEPUPinst.png)
 
 This is the gameboard.
 ![Image of game with no lights](KeepUpnolight.png)
