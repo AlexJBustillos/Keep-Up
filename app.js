@@ -38,7 +38,7 @@ onButton.addEventListener('click', () => {
             clearColor()
         }, 800)
         on = true;
-        turnCounter.textContent = "-";
+        turnCounter.textContent = "Round -";
     } else {
         on = false;
         turnCounter.textContent = "";
@@ -128,7 +128,7 @@ play = () => {
     flash = 0;
     intervalId = 0;
     turn = 1;
-    turnCounter.textContent = 1;
+    turnCounter.textContent = 'Round ' + 1;
     good = true;
     for (i = 0; i < 15; i++) {
         computerArray.push(Math.floor(Math.random() * 4) + 1);
@@ -215,7 +215,7 @@ check = () => {
         playerArray = [];
         compTurn = true;
         flash = 0;
-        turnCounter.textContent = turn;
+        turnCounter.textContent = 'Round ' + turn;
         intervalId = setInterval(gameTurn, 800)
     }
 };
