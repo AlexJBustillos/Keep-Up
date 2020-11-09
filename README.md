@@ -2,7 +2,16 @@
 
 ## Overview
 
-My initial idea for this game was a retro 80's look of the **Simon game**. I drew inspiration for the styling from the movie **Drive**. Always loved the color and design of it and tried to reflect as much as possible in the design of the page. Another source of inspiration was the cult classic anime film **Akira**. I used an image of the film I found as the background for the game board.
+This game is my first project for GA SEI course. After a month of hair pulling and many many breakdowns, I got my first shot at showing off what I've learned so far. My initial idea for this game was a retro 80's look of the **Simon game**. 
+
+![Image of Simon](simonimg.jpeg)
+
+I drew inspiration for the styling from the movie **Drive**. 
+![Image of Drive](newdriveimg.jpeg)
+
+Always loved the color and design of it and tried to reflect as much as possible in the design of the page. Another source of inspiration was the cult classic anime film **Akira**.
+![Image of AKira](akiraimg.jpeg)
+ I used an image from a gallery I found by Yorokobe Shounen as the background for the game board.
 
 ## Installation
 
@@ -26,12 +35,11 @@ When you turn the game on the board lights up and you can start the game by pres
 
 ```HTML
 <div class="board">
-                <div class="block" id="teal"></div>
-                <div class="block" id="pink"></div>
-                <div class="block" id="purple"></div>
-                <div class="block" id="orange"></div>
-                
-            </div>
+    <div class="block" id="teal"></div>
+    <div class="block" id="pink"></div>
+    <div class="block" id="purple"></div>
+    <div class="block" id="orange"></div>
+</div>
 ```
 This was my game board. I put each block of color with its own **id**
 This made it easier to do the styling for the game and add the glow effect for each color.
@@ -61,8 +69,50 @@ flashColor = () => {
     orange.classList.add('glow-orange');
 }
 ```
-This was my favorite piece of code for the **Javascript** because it helped me be able to turn the lights on and off throughout the code without having to hardcode this constantly. 
+This was my favorite piece of code for the **Javascript** because it helped me be able to turn the lights on and off throughout the code without having to hardcode this constantly.
 
+```Javascript
+play = () => {
+    win = false;
+    computerArray = [];
+    playerArray = [];
+    flash = 0;
+    intervalId = 0;
+    turn = 1;
+    turnCounter.textContent = 1;
+    good = true;
+    for (i = 0; i < 15; i++) {
+        computerArray.push(Math.floor(Math.random() * 4) + 1);
+    }
+    compTurn = true;
+
+    intervalId = setInterval(gameTurn, 800)
+};
+```
+This **Play Function** is what starts the game. It sets all my variables up and pushes the random array for the computer by creating a string of 15 numbers from 1-4. Each of those numbers is assigned a color and sound 
+```Javascript
+one = () => {
+    let audio = document.getElementById('forTeal');
+    audio.play();
+    teal.classList.add('glow-teal');
+
+}
+two = () => {
+    let audio = document.getElementById('forPink');
+    audio.play();
+    pink.classList.add('glow-pink');
+}
+three = () => {
+    let audio = document.getElementById('forPurple');
+    audio.play();
+    purple.classList.add('glow-purple');
+}
+four = () => {
+    let audio = document.getElementById('forOrange');
+    audio.play();
+    orange.classList.add('glow-orange');
+}
+```
 
 
 

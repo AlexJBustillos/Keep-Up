@@ -1,4 +1,4 @@
-//creat a variable with empty array
+//Variables
 let playerArray = [];
 let computerArray = [];
 let flash;
@@ -23,7 +23,7 @@ const turnCounter = document.getElementById('turn');
 const onButton = document.getElementById('on');
 const startButton = document.getElementById('start');
 
-//Event Listeners as variables
+//Event Listeners
 startButton.addEventListener('click', () => {
     if (on || win) {
         
@@ -130,7 +130,7 @@ grabGame.addEventListener('click', (event) => {
     // addElementToArray();
     
 });
-
+// functions
 play = () => {
     win = false;
     computerArray = [];
