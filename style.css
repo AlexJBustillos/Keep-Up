@@ -10,6 +10,7 @@ body {
     background-image: url(https://artfiles.alphacoders.com/121/thumb-1920-121146.jpg);
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
 }
 
 .title {

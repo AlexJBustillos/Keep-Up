@@ -216,7 +216,7 @@ check = () => {
         flashColor();
         let audio = document.getElementById('forLoss');
         audio.play();
-        turnCounter.textContent = 'YOU LOSE AND NOW YOURE A BOSS TOO...OF THIS PILE OF RUBBLE';
+        turnCounter.textContent = "YOU LOSE AND NOW YOU'RE A BOSS TOO...OF THIS PILE OF RUBBLE";
         on = false;
         win = true;
         setTimeout(() => {
