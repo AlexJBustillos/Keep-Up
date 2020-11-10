@@ -196,7 +196,6 @@ body {
 }
 
 #label {
-    /* font-size: medium; */
     color: black;
     visibility: hidden;
     border-radius: 32px;
@@ -208,6 +207,7 @@ body {
     padding: 2px 2px 2px 2px;
     margin-right: 4px;
 }
+    
 #label:hover {
     background-color: rgb(201, 21, 99) ;
 }

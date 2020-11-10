@@ -30,8 +30,8 @@ startButton.addEventListener('click', () => {
         play();
       };
 })
-
 onButton.addEventListener('click', () => {
+
     if (onButton.checked === true) {
         flashColor();
         setTimeout(() => {
@@ -46,7 +46,6 @@ onButton.addEventListener('click', () => {
         clearInterval(intervalId);
     };
 });
-
 teal.addEventListener('click', () => {
     if (on) {
         playerArray.push(1);
@@ -59,7 +58,6 @@ teal.addEventListener('click', () => {
         }
     }
 }); 
-        
 pink.addEventListener('click', () => {
     if (on) {
         playerArray.push(2);
@@ -72,7 +70,6 @@ pink.addEventListener('click', () => {
         }
     }
 });    
-    
 purple.addEventListener('click', () => {
     if (on) {
         playerArray.push(3);
@@ -85,7 +82,6 @@ purple.addEventListener('click', () => {
         }
     }
 });   
-        
 orange.addEventListener('click', () => {
     if (on) {
         playerArray.push(4);
@@ -98,7 +94,6 @@ orange.addEventListener('click', () => {
         }
     }
 });     
-    
 grabInstructions.addEventListener('click', () => {
     grabGame.style.display = 'block';
     grabInstructions.style.display = 'none';
@@ -119,7 +114,7 @@ grabGame.addEventListener('click', () => {
     document.getElementById('label').style.visibility = 'visible';
     document.getElementById('turn').style.visibility = 'visible';
 });
-    
+
 // functions
 play = () => {
     win = false;
@@ -132,12 +127,10 @@ play = () => {
     good = true;
     for (i = 0; i < 15; i++) {
         computerArray.push(Math.floor(Math.random() * 4) + 1);
-    }
+    };
     compTurn = true;
     intervalId = setInterval(gameTurn, 800)
 };
-
-
 gameTurn = () => {
     on = false;
     if (flash === turn) {
@@ -154,18 +147,14 @@ gameTurn = () => {
                if (computerArray[flash] == 3) three(); 
                if (computerArray[flash] == 4) four();
                flash++; 
-            }, 200);
-    
+            }, 100);
         };
-
     };
 };
-
 one = () => {
     let audio = document.getElementById('forTeal');
     audio.play();
     teal.classList.add('glow-teal');
-
 }
 two = () => {
     let audio = document.getElementById('forPink');
@@ -194,13 +183,12 @@ flashColor = () => {
     purple.classList.add('glow-purple');
     orange.classList.add('glow-orange');
 }
-
 check = () => {
     if (playerArray[playerArray.length - 1] !== computerArray[playerArray.length - 1]) 
     good = false;
-    if (playerArray.length === 5 && good) {
+     else if (playerArray.length === 5 && good) {
         winGame();
-    }
+    } else 
     if (good === false) {
         flashColor();
         let audio = document.getElementById('forLoss');
@@ -211,7 +199,7 @@ check = () => {
         setTimeout(() => {
             clearColor();
         }, 1000);
-    };
+    } else 
     if (turn === playerArray.length && good && !win) {
         turn++;
         playerArray = [];
@@ -219,9 +207,8 @@ check = () => {
         flash = 0;
         turnCounter.textContent = 'Round ' + turn;
         intervalId = setInterval(gameTurn, 800)
-    }
+    };
 };
-
 winGame = () => {
     flashColor();
     turnCounter.textContent = 'WIN!'
@@ -230,6 +217,19 @@ winGame = () => {
     let audio = document.getElementById('forWin');
     audio.play();
 };
+
+    
+
+        
+    
+        
+    
+    
+
+
+
+
+
             
 
 
