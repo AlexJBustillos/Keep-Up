@@ -109,7 +109,7 @@ grabInstructions.addEventListener('click', () => {
     document.getElementById('label').style.visibility = 'hidden';
     document.getElementById('turn').style.visibility = 'hidden';
 });
-grabGame.addEventListener('click', (event) => {
+grabGame.addEventListener('click', () => {
     grabGame.style.display = 'none';
     grabInstructions.style.display = 'block';
     grabBoard.style.display = 'flex';
@@ -134,9 +134,9 @@ play = () => {
         computerArray.push(Math.floor(Math.random() * 4) + 1);
     }
     compTurn = true;
-
     intervalId = setInterval(gameTurn, 800)
 };
+
 
 gameTurn = () => {
     on = false;
@@ -145,18 +145,20 @@ gameTurn = () => {
         compTurn = false;
         clearColor();
         on = true;
-    }
-    if (compTurn) {
-        clearColor();
-        setTimeout(() => {
-           if (computerArray[flash] == 1) one(); 
-           if (computerArray[flash] == 2) two(); 
-           if (computerArray[flash] == 3) three(); 
-           if (computerArray[flash] == 4) four();
-           flash++; 
-        }, 200);
+    } else {
+        if (compTurn) {
+            clearColor();
+            setTimeout(() => {
+               if (computerArray[flash] == 1) one(); 
+               if (computerArray[flash] == 2) two(); 
+               if (computerArray[flash] == 3) three(); 
+               if (computerArray[flash] == 4) four();
+               flash++; 
+            }, 200);
+    
+        };
 
-    }
+    };
 };
 
 one = () => {
@@ -196,7 +198,7 @@ flashColor = () => {
 check = () => {
     if (playerArray[playerArray.length - 1] !== computerArray[playerArray.length - 1]) 
     good = false;
-    if (playerArray.length === 15 && good) {
+    if (playerArray.length === 5 && good) {
         winGame();
     }
     if (good === false) {

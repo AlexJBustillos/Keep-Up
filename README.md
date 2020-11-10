@@ -115,11 +115,71 @@ four = () => {
     orange.classList.add('glow-orange');
 }
 ```
+The **gameTurn** function allows the player to go if the number of flashes is equal to the turn, if not then the computer goes and if the number in the computer array is equal to one then the **one** function is used and it does the same depending on what number is up in the array.
+```Javascript
+gameTurn = () => {
+    on = false;
+    if (flash === turn) {
+        clearInterval(intervalId);
+        compTurn = false;
+        clearColor();
+        on = true;
+    } else {
+        if (compTurn) {
+            clearColor();
+            setTimeout(() => {
+               if (computerArray[flash] == 1) one(); 
+               if (computerArray[flash] == 2) two(); 
+               if (computerArray[flash] == 3) three(); 
+               if (computerArray[flash] == 4) four();
+               flash++; 
+            }, 200);
+    
+        };
 
-
-
-
-
+    };
+};
+```
+The **check** function is what checks to see if the player lost or won. If the player won then the **winGame** function is called. If the player lost then the lights flash and the **deathbell** audio is played and the turnCounter lets you know you lost. The last conditional is if the player array is equal to the turn and the items in the both array are equal and they havent reached the final round then the game continues.
+```Javascript
+check = () => {
+    if (playerArray[playerArray.length - 1] !== computerArray[playerArray.length - 1]) 
+    good = false;
+    if (playerArray.length === 15 && good) {
+        winGame();
+    }
+    if (good === false) {
+        flashColor();
+        let audio = document.getElementById('forLoss');
+        audio.play();
+        turnCounter.textContent = "YOU LOSE AND NOW YOU'RE A BOSS TOO...OF THIS PILE OF RUBBLE";
+        on = false;
+        win = true;
+        setTimeout(() => {
+            clearColor();
+        }, 1000);
+    };
+    if (turn === playerArray.length && good && !win) {
+        turn++;
+        playerArray = [];
+        compTurn = true;
+        flash = 0;
+        turnCounter.textContent = 'Round ' + turn;
+        intervalId = setInterval(gameTurn, 800)
+    }
+};
+```
+The **winGame** function runs when the player has won and turns the lights on. The turn counter lets you know you won and the win audio is played.
+```Javascript
+winGame = () => {
+    flashColor();
+    turnCounter.textContent = 'WIN!'
+    on = false;
+    win = true;
+    let audio = document.getElementById('forWin');
+    audio.play();
+};
+```
 
 
 
